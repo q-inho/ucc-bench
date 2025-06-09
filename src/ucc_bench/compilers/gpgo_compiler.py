@@ -10,7 +10,7 @@ from qbraid import transpile
 from ..registry import register
 
 
-@register.compiler("peephole")
+@register.compiler("guoq")
 class UCCCompiler(BaseCompiler[QuantumCircuit]):
     """
     Wrapper for benchmarking ucc compiler.
@@ -25,7 +25,7 @@ class UCCCompiler(BaseCompiler[QuantumCircuit]):
         return transpile(qasm, "qiskit")
 
     def compile(self, circuit: QuantumCircuit, ) -> QuantumCircuit:
-        return compile(circuit, target_gateset={"rx", "ry", "rz", "h", "cx"}, enable_peephole=True)
+        return compile(circuit, target_gateset={"rx", "ry", "rz", "h", "cx"}, enable_peephole=True, enable_guoq=False)
 
     def count_multi_qubit_gates(self, circuit: QuantumCircuit) -> int:
         return circuit.num_nonlocal_gates()
