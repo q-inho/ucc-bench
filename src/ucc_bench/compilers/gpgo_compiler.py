@@ -10,7 +10,7 @@ from qbraid import transpile
 from ..registry import register
 
 
-@register.compiler("guoq")
+@register.compiler("peephole")
 class UCCCompiler(BaseCompiler[QuantumCircuit]):
     """
     Wrapper for benchmarking ucc compiler.
