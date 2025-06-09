@@ -13,13 +13,7 @@ description = "Benchmarks to measure impact of compiling on circuit-specific obs
 [[compilers]]
 id = "ucc"
 [[compilers]]
-id = "pytket-peep"
-[[compilers]]
-id = "qiskit-default"
-[[compilers]]
-id = "cirq"
-[[compilers]]
-id = "gpgo"
+id = "peephole"
 
 # --------- Benchmarks ----------
 # Define the set of individual benchmarks
